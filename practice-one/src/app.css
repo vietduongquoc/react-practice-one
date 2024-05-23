@@ -1,0 +1,12 @@
+.App {
+    text-align: center;
+    align-items: center;
+    color: aqua;
+}
+
+
+h1 {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+}
