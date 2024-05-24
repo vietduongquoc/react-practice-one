@@ -1,0 +1,63 @@
+.iconAdd {
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    color: var(--color-secondary); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formAdd {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid transparent;
+    border-color: var(--color-border-primary);
+    border-radius: 10px;
+}
+
+.wrapContent {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--color-primary);
+    padding: 20px 10px;
+}
+
+.formAdd:focus-within {
+    border-color: var(--color-primary);
+}
+
+.titleContent {
+    font-weight: var(--font-weight-medium);
+    font-size: 14px;
+    padding: 5px;
+}
+
+.descriptionContent {
+    font-weight: var(--font-weight-regular);
+    font-size: 13px;
+    padding: 5px;
+}
+
+.titleContent,
+.descriptionContent {
+    border: none;
+    outline: none;
+}
+
+.wrapBtn,
+.btnAdd,
+.btnCancel {
+    font-weight: var(--font-weight-medium);
+}
+
+.wrapBtn {
+    justify-content: end;
+    display: inline-flex;
+    padding: 10px;
+}

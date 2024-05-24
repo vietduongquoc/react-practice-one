@@ -1,0 +1,55 @@
+/* src/components/common/btn/index.css */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+}
+
+.btnOpenForm {
+    background-color: var(--color-white);
+    border: none;
+}
+
+.btnOpenForm:hover {
+    color: var(--color-secondary);
+}
+
+.btnOpenForm:hover .iconAdd {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.btnAddDisabled {
+    background-color: var(--color-disnable);
+}
+
+.btnAdd {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 5px;
+    width: 100px;
+    margin-left: 20px;
+}
+
+.btnAdd:hover {
+    background-color: var(--color-danger);
+}
+
+.btnCancel {
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 5px;
+    width: 70px;
+    background-color: #dddcdcde;
+    color: var(--color-primary);
+}
+
+.btnCancel:hover {
+    background-color: var(--color-background-primary) ;
+    color: #444;
+}

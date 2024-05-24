@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './addTaskForm.css'
 
 function AddTaskForm({ addTask, toggleForm }) {
   const [taskName, setTaskName] = useState('');
@@ -18,21 +19,27 @@ function AddTaskForm({ addTask, toggleForm }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={taskName}
-        onChange={(e) => setTaskName(e.target.value)}
-        placeholder="Task name"
-      />
-      <input
-        type="text"
-        value={taskDescription}
-        onChange={(e) => setTaskDescription(e.target.value)}
-        placeholder="Description"
-      />
-      <button type="button" onClick={handleCancel}>Cancel</button>
-      <button type="submit">Add</button>
+    <form className='formAdd' onSubmit={handleSubmit}>
+      <div className='wrapContent'>
+        <input
+          className='titleContent'
+          type="text"
+          value={taskName}
+          onChange={(e) => setTaskName(e.target.value)}
+          placeholder="Task name"
+        />
+        <input
+          className='descriptionContent'
+          type="text"
+          value={taskDescription}
+          onChange={(e) => setTaskDescription(e.target.value)}
+          placeholder="Description"
+        />
+      </div>
+      <div className='wrapBtn'>
+        <button className='btn btnCancel' type="button" onClick={handleCancel}>Cancel</button>
+        <button className='btn btnAdd' type="submit">Add</button>
+      </div>
     </form>
   );
 }

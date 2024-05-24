@@ -1,12 +1,14 @@
 .App {
     text-align: center;
     align-items: center;
-    color: aqua;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
 }
 
-
 h1 {
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-size: 26px;
     line-height: 35px;
 }
+
