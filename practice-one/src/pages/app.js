@@ -30,7 +30,7 @@ function App() {
             {!showForm && (
                 <button className='btn btnOpenForm' onClick={toggleForm}>
                     <span className="iconAdd" aria-hidden="true">
-                        <svg width="13" height="13">
+                        <svg width="15" height="15">
                             <path fill="currentColor" fillRule="evenodd"
                                 d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z"></path>
                         </svg>

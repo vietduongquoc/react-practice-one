@@ -1,0 +1,6 @@
+/* Style the container */
+.task-item {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 10px;
+}

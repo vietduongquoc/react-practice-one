@@ -1,9 +1,12 @@
 .iconAdd {
     border-radius: 50%;
-    height: 17px;
-    width: 17px;
+    height: 20px;
+    width: 20px;
     margin-right: 10px;
     color: var(--color-secondary); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .formAdd {
@@ -16,8 +19,6 @@
     border: 1px solid transparent;
     border-color: var(--color-border-primary);
     border-radius: 10px;
-    transition: border-color 0.3s;
-
 }
 
 .wrapContent {

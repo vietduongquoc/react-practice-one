@@ -46,10 +46,10 @@
     border-radius: 5px;
     width: 70px;
     background-color: #dddcdcde;
-    color: #848484;
+    color: var(--color-primary);
 }
 
 .btnCancel:hover {
-    background-color: #c2bfbf;
+    background-color: var(--color-background-primary) ;
     color: #444;
 }

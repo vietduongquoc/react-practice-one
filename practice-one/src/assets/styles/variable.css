@@ -1,12 +1,15 @@
 :root {
-    /* Color Palette */
-    --color-primary: #848484;
+    /* Color   */
+    --color-primary: #848484; 
     --color-secondary: #dc4c3e;
     --color-danger: #c3392c;
     --color-disnable: #eda59e;
     --color-white: #ffffff;
 
     --color-border-primary: #e6e6e6;
+    
+
+    --color-background-primary: #7c7c7c8f;
 
   
     /* Font Sizes */

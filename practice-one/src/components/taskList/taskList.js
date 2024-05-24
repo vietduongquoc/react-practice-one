@@ -1,6 +1,6 @@
 import React from 'react';
 import TaskItem from '../taskItem/taskItem';
-import './taskList.css'; // Import CSS file
+import './taskList.css'; 
 
 function TaskList({ tasks, editTask, removeTask }) {
   return (
@@ -9,7 +9,6 @@ function TaskList({ tasks, editTask, removeTask }) {
         <TaskItem
           key={task.id}
           task={task}
-        
         />
       ))}
     </div>
