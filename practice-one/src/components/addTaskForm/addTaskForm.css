@@ -1,3 +1,11 @@
+.iconAdd {
+    border-radius: 50%;
+    height: 17px;
+    width: 17px;
+    margin-right: 10px;
+    color: var(--color-secondary); 
+}
+
 .formAdd {
     display: flex;
     justify-content: space-between;
@@ -6,7 +14,7 @@
     max-width: 700px;
     margin: 0 auto;
     border: 1px solid transparent;
-    border-color: #e6e6e6;
+    border-color: var(--color-border-primary);
     border-radius: 10px;
     transition: border-color 0.3s;
 
@@ -15,22 +23,22 @@
 .wrapContent {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid #848484;
+    border-bottom: 1px solid var(--color-primary);
     padding: 20px 10px;
 }
 
 .formAdd:focus-within {
-    border-color: #848484;
+    border-color: var(--color-primary);
 }
 
 .titleContent {
-    font-weight: 600;
+    font-weight: var(--font-weight-medium);
     font-size: 14px;
     padding: 5px;
 }
 
 .descriptionContent {
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
     font-size: 13px;
     padding: 5px;
 }
@@ -44,7 +52,7 @@
 .wrapBtn,
 .btnAdd,
 .btnCancel {
-    font-weight: 600;
+    font-weight: var(--font-weight-medium);
 }
 
 .wrapBtn {

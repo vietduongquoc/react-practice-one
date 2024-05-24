@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './addTaskForm.css'
 
 function AddTaskForm({ addTask, toggleForm }) {
   const [taskName, setTaskName] = useState('');

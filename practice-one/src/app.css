@@ -5,15 +5,8 @@
 }
 
 h1 {
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-size: 26px;
     line-height: 35px;
 }
 
-.iconAdd {
-    border-radius: 50%;
-    height: 17px;
-    width: 17px;
-    margin-right: 10px;
-    color: #dc4c3e; 
-}
