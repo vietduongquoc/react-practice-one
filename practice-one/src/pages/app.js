@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AddTaskForm from '../components/addTaskForm/addTaskForm';
+import Button from '../components/common/button';
 
 function App() {
     const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || []);
@@ -21,14 +22,13 @@ function App() {
     return (
         <div className="App">
             <h1>Today</h1>
-            <button className='btn' onClick={toggleForm}>
-                <svg width="20" height="20">
-                    <use xlinkHref="#add-icon" />
+            <button className='btn btn-open-form' onClick={toggleForm}>
+                <span class="icon-add" aria-hidden="true"><svg width="13" height="13"><path fill="currentColor" fill-rule="evenodd"
+                    d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z"></path>
                 </svg>
-            </button>
-            <span onClick={toggleForm}>
+                </span>
                 Add task
-            </span>
+            </button>
             {showForm && <AddTaskForm addTask={addTask} toggleForm={toggleForm} />}
         </div>
     )

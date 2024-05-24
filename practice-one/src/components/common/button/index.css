@@ -1,0 +1,30 @@
+/* src/components/common/btn/index.css */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.btn-open-form {
+    background-color: #ffffff;
+    border: #ffffff;
+}
+
+.btn-open-form:hover {
+    color: #dc4c3e;
+    background-color: #ffffff; 
+}
+
+.icon-add {
+    border-radius: 50%;
+    height: 17px;
+    width: 17px;
+    margin-right: 10px;
+    color: #dc4c3e; 
+}
+
+.btn-open-form:hover .icon-add {
+    background-color: #dc4c3e;
+    color: #ffffff; 
+}
