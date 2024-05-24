@@ -1,0 +1,54 @@
+.formAdd {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid transparent;
+    border-color: #e6e6e6;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+
+}
+
+.wrapContent {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #848484;
+    padding: 20px 10px;
+}
+
+.formAdd:focus-within {
+    border-color: #848484;
+}
+
+.titleContent {
+    font-weight: 600;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.descriptionContent {
+    font-weight: 400;
+    font-size: 13px;
+    padding: 5px;
+}
+
+.titleContent,
+.descriptionContent {
+    border: none;
+    outline: none;
+}
+
+.wrapBtn,
+.btnAdd,
+.btnCancel {
+    font-weight: 600;
+}
+
+.wrapBtn {
+    justify-content: end;
+    display: inline-flex;
+    padding: 10px;
+}

@@ -5,26 +5,51 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border: none;
 }
-.btn-open-form {
+
+.btnOpenForm {
     background-color: #ffffff;
     border: #ffffff;
 }
 
-.btn-open-form:hover {
+.btnOpenForm:hover {
     color: #dc4c3e;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 
-.icon-add {
-    border-radius: 50%;
-    height: 17px;
-    width: 17px;
-    margin-right: 10px;
-    color: #dc4c3e; 
-}
-
-.btn-open-form:hover .icon-add {
+.btnOpenForm:hover .iconAdd {
     background-color: #dc4c3e;
-    color: #ffffff; 
+    color: #ffffff;
+}
+
+.btnAddDisabled {
+    background-color: #eda59e;
+}
+
+.btnAdd {
+    background-color: #dc4c3e;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 5px;
+    width: 100px;
+    margin-left: 20px;
+}
+
+.btnAdd:hover {
+    background-color: #c3392c;
+}
+
+.btnCancel {
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 5px;
+    width: 70px;
+    background-color: #e9e5e5b9;
+    color: #444;
+}
+
+.btnCancel:hover {
+    background-color: #dbd7d7;
 }

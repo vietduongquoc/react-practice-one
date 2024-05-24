@@ -9,3 +9,11 @@ h1 {
     font-size: 26px;
     line-height: 35px;
 }
+
+.iconAdd {
+    border-radius: 50%;
+    height: 17px;
+    width: 17px;
+    margin-right: 10px;
+    color: #dc4c3e; 
+}
