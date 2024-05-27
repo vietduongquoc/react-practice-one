@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './taskItem.css'; // Import CSS file
+import './taskItem.css'; 
 
 const TaskItem = ({ task, removeTask, editTask }) => {
   const [isEditing, setIsEditing] = useState(false);

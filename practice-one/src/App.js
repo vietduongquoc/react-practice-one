@@ -1,51 +1,40 @@
 import React, { useState, useEffect } from 'react';
-import AddTaskForm from '../components/AddTaskForm/AddTaskForm';
-import TaskCounter from '../components/TaskCounter/TaskCounter';
-import TaskList from '../components/TaskList/TaskList';
-import '../components/index.css'
-import { fetchTasks, createTask} from '../services/TaskService';
-
-
-
+import AddTaskForm from './components/AddTaskForm/AddTaskForm';
+import TaskCounter from './components/TaskCounter/TaskCounter';
+import TaskList from './components/TaskList/TaskList';
+import { fetchTasks, createTask } from './services/TaskService';
+import './components/index.css';
 
 function App() {
     const [tasks, setTasks] = useState([]);
     const [showForm, setShowForm] = useState(false);
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const getTasks = async () => {
+        const loadTasks = async () => {
             try {
-                const fetchedTasks = await fetchTasks();
-                setTasks(fetchedTasks);
+                const tasks = await fetchTasks();
+                setTasks(tasks);
             } catch (error) {
-                console.error('Failed to fetch tasks:', error);
-            } finally {
-                setLoading(false);
+                console.error('Error loading tasks:', error);
             }
         };
 
-        getTasks();
+        loadTasks();
     }, []);
 
     const addTask = async (name, description) => {
-        const newTask = { name, description };
         try {
-            const createdTask = await createTask(newTask);
-            setTasks([...tasks, createdTask]);
+            const newTask = await createTask({ name, description });
+            setTasks([...tasks, newTask]);
             setShowForm(false);
         } catch (error) {
-            console.error('Failed to add task:', error);
+            console.error('Error adding task:', error);
         }
     };
 
     const toggleForm = () => {
         setShowForm(!showForm);
     };
-
-    if (loading) {
-        return <div>Loading...</div>;
-    }
 
     return (
         <div className="App">

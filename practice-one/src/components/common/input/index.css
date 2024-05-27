@@ -14,8 +14,8 @@
 .custom-checkbox {
     width: 20px;
     height: 20px;
-    background-color: #fff;
-    border: 2px solid #ddd;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-background-primary);
     border-radius: 50%;
     display: inline-block;
     position: relative;
@@ -27,11 +27,11 @@
     content: "";
     position: absolute;
     display: none;
-    left: 6px;
+    left: 7px;
     top: 2px;
     width: 4px;
     height: 10px;
-    border: solid #000;
+    border: solid var(--color-background-primary);
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }
@@ -41,4 +41,5 @@
 .custom-checkbox:hover::after {
     display: block;
 }
+
 
