@@ -19,26 +19,26 @@ function AddTaskForm({ addTask, toggleForm }) {
   };
 
   return (
-    <form className='formAdd' onSubmit={handleSubmit}>
-      <div className='wrapContent'>
+    <form className='form-add' onSubmit={handleSubmit}>
+      <div className='wrap-content'>
         <input
-          className='titleContent'
+          className='title-content'
           type="text"
           value={taskName}
           onChange={(e) => setTaskName(e.target.value)}
           placeholder="Task name"
         />
         <input
-          className='descriptionContent'
+          className='description-content'
           type="text"
           value={taskDescription}
           onChange={(e) => setTaskDescription(e.target.value)}
           placeholder="Description"
         />
       </div>
-      <div className='wrapBtn'>
-        <button className='btn btnCancel' type="button" onClick={handleCancel}>Cancel</button>
-        <button className='btn btnAdd' type="submit">Add</button>
+      <div className='wrap-btn'>
+        <button className='btn btn-cancel' type="button" onClick={handleCancel}>Cancel</button>
+        <button className='btn btn-add' type="submit">Add</button>
       </div>
     </form>
   );
