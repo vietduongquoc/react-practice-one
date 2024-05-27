@@ -4,6 +4,9 @@ import TaskCounter from '../components/TaskCounter/TaskCounter';
 import TaskList from '../components/TaskList/TaskList';
 import '../components/index.css'; 
 
+
+
+
 function App() {
     const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || []);
     const [showForm, setShowForm] = useState(false);
