@@ -35,8 +35,15 @@ const TaskItem = ({ task, removeTask, editTask }) => {
 
   return (
     <div className="task-item">
-      <input type="checkbox" onChange={handleCheckboxChange} id={`checkbox-${task.id}`} />
+      {/* Custom checkbox implementation */}
+      <input 
+        type="checkbox" 
+        onChange={handleCheckboxChange} 
+        id={`checkbox-${task.id}`} 
+        className="hidden-checkbox" 
+      />
       <label htmlFor={`checkbox-${task.id}`} className="custom-checkbox"></label>
+
       {isEditing ? (
         <div>
           <input type="text" value={newName} onChange={handleInputChange} />

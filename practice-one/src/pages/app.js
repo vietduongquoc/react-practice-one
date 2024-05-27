@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AddTaskForm from '../components/AddTaskForm/AddTaskForm';
 import TaskCounter from '../components/TaskCounter/TaskCounter';
 import TaskList from '../components/TaskList/TaskList';
-import '../components/index.css'; 
+import '../components/index.css'
 import { fetchTasks, createTask} from '../services/TaskService';
 
 
