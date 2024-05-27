@@ -2,28 +2,50 @@ import React, { useState, useEffect } from 'react';
 import AddTaskForm from '../components/AddTaskForm/AddTaskForm';
 import TaskCounter from '../components/TaskCounter/TaskCounter';
 import TaskList from '../components/TaskList/TaskList';
-import '../components/index.css'; 
+import '../components/index.css'
+import { fetchTasks, createTask} from '../services/TaskService';
 
 
 
 
 function App() {
-    const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || []);
+    const [tasks, setTasks] = useState([]);
     const [showForm, setShowForm] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    }, [tasks]);
+        const getTasks = async () => {
+            try {
+                const fetchedTasks = await fetchTasks();
+                setTasks(fetchedTasks);
+            } catch (error) {
+                console.error('Failed to fetch tasks:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    const addTask = (name, description) => {
-        const newTask = { id: Date.now(), name, description };
-        setTasks([...tasks, newTask]);
-        setShowForm(false);
+        getTasks();
+    }, []);
+
+    const addTask = async (name, description) => {
+        const newTask = { name, description };
+        try {
+            const createdTask = await createTask(newTask);
+            setTasks([...tasks, createdTask]);
+            setShowForm(false);
+        } catch (error) {
+            console.error('Failed to add task:', error);
+        }
     };
 
     const toggleForm = () => {
         setShowForm(!showForm);
     };
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="App">
@@ -43,7 +65,7 @@ function App() {
             )}
             {showForm && <AddTaskForm addTask={addTask} toggleForm={toggleForm} />}
         </div>
-    )
+    );
 }
 
 export default App;
