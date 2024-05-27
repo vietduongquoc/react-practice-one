@@ -1,5 +1,3 @@
-/* src/components/common/btn/index.css */
-
 .btn {
     display: inline-flex;
     align-items: center;
@@ -70,3 +68,20 @@
     transition-delay: 0.12s;
 }
 
+.btn-remove-task {
+    display: none;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+  }
+  
+  .task-item .btn-remove-task {
+    display: block;
+  }
+  
+  .task-item .btn-remove-task:hover {
+    background-color: darkred;
+  }
