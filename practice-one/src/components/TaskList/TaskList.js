@@ -1,5 +1,5 @@
 import React from 'react';
-import TaskItem from '../TaskItem/aaaa';
+import TaskItem from '../TaskItem/TaskItem';
 import './taskList.css'; 
 
 function TaskList({ tasks, editTask, removeTask }) {
