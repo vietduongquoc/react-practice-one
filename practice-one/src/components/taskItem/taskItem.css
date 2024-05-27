@@ -1,6 +1,27 @@
 /* Style the container */
 .task-item {
-    display: inline-flex;
-    align-items: center;
     margin-bottom: 10px;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+}
+
+.title-task {
+    color: #202020;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+}
+
+.description-task {
+    color: var(--color-primary);
+    font-size: 13px;
+}
+
+.task-column-left {
+    display: flex;
+}
+
+.wrap-content-task {
+    margin-left: 15px;
 }
