@@ -50,6 +50,23 @@
 }
 
 .btn-cancel:hover {
-    background-color: var(--color-background-primary) ;
+    background-color: var(--color-background-primary);
     color: #444;
 }
+
+.btn-edit-task {
+    background-color: var(--color-white);
+    border-color: transparent;
+    cursor: pointer;
+    border-radius: 3px;
+    height: 28px;
+    width: 35px;
+    text-align: center;
+}
+
+.btn-edit-task:hover {
+    background-color: var(--color-border-primary);
+    border-radius: var(--border-radius-sm);
+    transition-delay: 0.12s;
+}
+
