@@ -1,9 +1,8 @@
 /* Style the container */
 .task-item {
     margin-bottom: 10px;
-    justify-content: space-between;
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
     display: flex;
 }
 
@@ -24,4 +23,14 @@
 
 .wrap-content-task {
     margin-left: 15px;
+}
+
+.wrap-input-title {
+    font-weight: var(--font-weight-medium);
+    font-size: 14px;
+    padding: 5px;
+}
+
+.custom-checkbox {
+    cursor: pointer;
 }

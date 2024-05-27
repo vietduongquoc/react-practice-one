@@ -19,7 +19,7 @@ function AddTaskForm({ addTask, toggleForm }) {
   };
 
   return (
-    <form className='form-add' onSubmit={handleSubmit}>
+    <form className='task-form' onSubmit={handleSubmit}>
       <div className='wrap-content'>
         <input
           className='title-content'
