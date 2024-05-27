@@ -3,7 +3,6 @@
     display: none;
 }
 
-/* Custom checkbox styling */
 .custom-checkbox {
     width: 20px;
     height: 20px;
@@ -30,9 +29,7 @@
 }
 
 /* Show checkmark when checkbox is checked */
-.hidden-checkbox:checked + .custom-checkbox::after,
+.hidden-checkbox:checked+.custom-checkbox::after,
 .custom-checkbox:hover::after {
     display: block;
 }
-
-
