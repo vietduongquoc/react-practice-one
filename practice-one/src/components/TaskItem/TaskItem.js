@@ -49,11 +49,14 @@ const TaskItem = ({ task, removeTask, editTask }) => {
 
       {isEditing ? (
         <div className='task-form'>
-          <input type="text" value={newName} onChange={handleInputChange} />
-          <br />
-          <textarea value={newDescription} onChange={handleDescriptionChange} />
-          <button onClick={handleSaveClick}>Save</button>
-          <button onClick={handleCancelClick}>Cancel</button>
+          <div className='wrap-content'>
+          <input className='title-content' type="text" value={newName} onChange={handleInputChange} />
+          <textarea className='description-content' value={newDescription} onChange={handleDescriptionChange} />
+          </div>
+          <div className='wrap-btn'>
+          <button onClick={handleCancelClick} className='btn  btn-cancel'>Cancel</button>
+          <button onClick={handleSaveClick} className='btn  btn-add'>Save</button>
+          </div>
         </div>
       ) : (
         <div className='wrap-content-task'>

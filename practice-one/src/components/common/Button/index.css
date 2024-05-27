@@ -43,12 +43,12 @@
     padding: 10px 12px;
     border-radius: 5px;
     width: 70px;
-    background-color: #dddcdcde;
+    background-color: var(--color-border-primary);
     color: var(--color-primary);
 }
 
 .btn-cancel:hover {
-    background-color: var(--color-background-primary);
+    background-color: var(--color-light-grey);
     color: #444;
 }
 
@@ -76,12 +76,12 @@
     cursor: pointer;
     padding: 5px;
     border-radius: 3px;
-  }
-  
-  .task-item .btn-remove-task {
+}
+
+.task-item .btn-remove-task {
     display: block;
-  }
-  
-  .task-item .btn-remove-task:hover {
+}
+
+.task-item .btn-remove-task:hover {
     background-color: darkred;
-  }
+}
