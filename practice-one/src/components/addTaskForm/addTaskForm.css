@@ -21,7 +21,7 @@
     border-radius: 10px;
 }
 
-.wrap-content {
+.wrapContent {
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid var(--color-primary);
@@ -32,31 +32,31 @@
     border-color: var(--color-primary);
 }
 
-.title-content {
+.titleContent {
     font-weight: var(--font-weight-medium);
     font-size: 14px;
     padding: 5px;
 }
 
-.description-content {
+.descriptionContent {
     font-weight: var(--font-weight-regular);
     font-size: 13px;
     padding: 5px;
 }
 
-.title-content,
-.description-content {
+.titleContent,
+.descriptionContent {
     border: none;
     outline: none;
 }
 
-.wrap-btn,
+.wrapBtn,
 .btn-add,
 .btn-cancel {
     font-weight: var(--font-weight-medium);
 }
 
-.wrap-btn {
+.wrapBtn {
     justify-content: end;
     display: inline-flex;
     padding: 10px;
