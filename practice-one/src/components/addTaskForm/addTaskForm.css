@@ -1,4 +1,4 @@
-.iconAdd {
+.icon-add {
     border-radius: 50%;
     height: 20px;
     width: 20px;
@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-.formAdd {
+.form-add {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -21,42 +21,42 @@
     border-radius: 10px;
 }
 
-.wrapContent {
+.wrap-content {
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid var(--color-primary);
     padding: 20px 10px;
 }
 
-.formAdd:focus-within {
+.form-add:focus-within {
     border-color: var(--color-primary);
 }
 
-.titleContent {
+.title-content {
     font-weight: var(--font-weight-medium);
     font-size: 14px;
     padding: 5px;
 }
 
-.descriptionContent {
+.description-content {
     font-weight: var(--font-weight-regular);
     font-size: 13px;
     padding: 5px;
 }
 
-.titleContent,
-.descriptionContent {
+.title-content,
+.description-content {
     border: none;
     outline: none;
 }
 
-.wrapBtn,
-.btnAdd,
-.btnCancel {
+.wrap-btn,
+.btn-add,
+.btn-cancel {
     font-weight: var(--font-weight-medium);
 }
 
-.wrapBtn {
+.wrap-btn {
     justify-content: end;
     display: inline-flex;
     padding: 10px;

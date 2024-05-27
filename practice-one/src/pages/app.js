@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import AddTaskForm from '../components/addTaskForm/addTaskForm';
-import TaskCounter from '../components/taskCounter/taskCounter';
-import TaskList from '../components/taskList/taskList';
+import AddTaskForm from '../components/AddTaskForm/AddTaskForm';
+import TaskCounter from '../components/TaskCounter/TaskCounter';
+import TaskList from '../components/TaskList/TaskList';
 import '../components/index.css'; 
 
 function App() {
@@ -28,9 +28,9 @@ function App() {
             <TaskCounter count={tasks.length} />
             <TaskList tasks={tasks} />
             {!showForm && (
-                <button className='btn btnOpenForm' onClick={toggleForm}>
-                    <span className="iconAdd" aria-hidden="true">
-                        <svg width="15" height="15">
+                <button className='btn btn-open-form' onClick={toggleForm}>
+                    <span className="icon-add" aria-hidden="true">
+                        <svg width="13" height="13">
                             <path fill="currentColor" fillRule="evenodd"
                                 d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z"></path>
                         </svg>

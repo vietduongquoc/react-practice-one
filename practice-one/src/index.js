@@ -1,5 +1,5 @@
 import React from "react";
-import './assets/styles/index.css';
+import './styles/index.css'
 import './app.css'
 import ReactDom from 'react-dom/client'
 import Routes from './routes'

@@ -8,25 +8,25 @@
     border: none;
 }
 
-.btnOpenForm {
+.btn-open-form {
     background-color: var(--color-white);
     border: none;
 }
 
-.btnOpenForm:hover {
+.btn-open-form:hover {
     color: var(--color-secondary);
 }
 
-.btnOpenForm:hover .iconAdd {
+.btn-open-form:hover .icon-add {
     background-color: var(--color-secondary);
     color: var(--color-white);
 }
 
-.btnAddDisabled {
+.btn-add-disabled {
     background-color: var(--color-disnable);
 }
 
-.btnAdd {
+.btn-add {
     background-color: var(--color-secondary);
     color: var(--color-white);
     font-size: 14px;
@@ -36,11 +36,11 @@
     margin-left: 20px;
 }
 
-.btnAdd:hover {
+.btn-add:hover {
     background-color: var(--color-danger);
 }
 
-.btnCancel {
+.btn-cancel {
     font-size: 14px;
     padding: 10px 12px;
     border-radius: 5px;
@@ -49,7 +49,7 @@
     color: var(--color-primary);
 }
 
-.btnCancel:hover {
+.btn-cancel:hover {
     background-color: var(--color-background-primary) ;
     color: #444;
 }
