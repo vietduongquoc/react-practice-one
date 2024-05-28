@@ -35,6 +35,7 @@ const TaskItem = ({ task, removeTask, editTask }) => {
 
   return (
     <div className="task-item">
+      <div className="column-task">
       {!isEditing && (
         <>
           <input
@@ -50,12 +51,12 @@ const TaskItem = ({ task, removeTask, editTask }) => {
       {isEditing ? (
         <div className='task-form'>
           <div className='wrap-content'>
-          <input className='title-content' type="text" value={newName} onChange={handleInputChange} />
-          <textarea className='description-content' value={newDescription} onChange={handleDescriptionChange} />
+            <input className='title-content' type="text" value={newName} onChange={handleInputChange} />
+            <textarea className='description-content' value={newDescription} onChange={handleDescriptionChange} />
           </div>
           <div className='wrap-btn'>
-          <button onClick={handleCancelClick} className='btn  btn-cancel'>Cancel</button>
-          <button onClick={handleSaveClick} className='btn  btn-add'>Save</button>
+            <button onClick={handleCancelClick} className='btn  btn-cancel'>Cancel</button>
+            <button onClick={handleSaveClick} className='btn  btn-add'>Save</button>
           </div>
         </div>
       ) : (
@@ -65,6 +66,7 @@ const TaskItem = ({ task, removeTask, editTask }) => {
           <span className='description-task'>{task.description}</span>
         </div>
       )}
+      </div>
       {!isEditing && (
         <button className='btn-edit-task' onClick={handleEditClick}>
           <svg width="24" height="24">

@@ -1,10 +1,19 @@
 /* Style the container */
 .task-item {
-    padding-bottom: 15px;
+    padding-bottom: 20px;
     width: 100%;
-    max-width: 700px;
+    max-width: 700px  !important;
+    display: flex;
+    border-bottom: 1px solid var(--color-light-grey);
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.column-task {
     display: flex;
     gap: 15px;
+    max-width: 700px;
+    width: 100%;
 }
 
 .task-item:hover .btn-edit-task {
@@ -26,10 +35,6 @@
     display: flex;
 }
 
-/* .wrap-content-task {
-    padding-right: 540px;
-} */
-
 .wrap-input-title {
     font-weight: var(--font-weight-medium);
     font-size: 14px;
@@ -39,4 +44,3 @@
 .custom-checkbox {
     cursor: pointer;
 }
-
