@@ -1,4 +1,3 @@
-// src/components/common/btn/index.js
 import React from 'react';
 import './index.css';
 

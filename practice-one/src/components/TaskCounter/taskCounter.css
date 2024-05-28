@@ -1,0 +1,7 @@
+.task-counter {
+   display: flex;
+   max-width: 75px;
+   justify-content: space-between;
+   color: var(--color-primary);
+   font-weight: var(--font-weight-regular);
+}
