@@ -1,7 +1,5 @@
 .btn {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     border: none;
 }
@@ -9,6 +7,8 @@
 .btn-open-form {
     background-color: var(--color-white);
     border: none;
+    padding: none;
+    padding: 0;
 }
 
 .btn-open-form:hover {
@@ -30,8 +30,9 @@
     font-size: 14px;
     padding: 10px 12px;
     border-radius: 5px;
-    width: 100px;
+    width: 90px;
     margin-left: 20px;
+    justify-content: center;
 }
 
 .btn-add:hover {
@@ -60,6 +61,7 @@
     height: 28px;
     width: 35px;
     text-align: center;
+    color: transparent;
 }
 
 .btn-edit-task:hover {
