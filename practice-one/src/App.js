@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AddTaskForm from './components/AddTaskForm/AddTaskForm';
 import TaskCounter from './components/TaskCounter/TaskCounter';
 import TaskList from './components/TaskList/TaskList';
-import { fetchTasks, createTask, updateTask } from './services/TaskService';
+import { fetchTasks, createTask, updateTask, deleteTask } from './services/TaskService';
 import './components/index.css';
 
 function App() {
@@ -38,9 +38,18 @@ function App() {
             setTasks(tasks.map(task => (task.id === id ? updatedTask : task)));
             setShowForm(false);
         } catch (error) {
-            console.log('Error edit task:', error);
+            console.error('Error editing task:', error);
         }
-    }
+    };
+
+    const completeTask = async (id) => {
+        try {
+            await deleteTask(id);
+            setTasks(tasks.filter(task => task.id !== id));
+        } catch (error) {
+            console.error('Error deleting task:', error);
+        }
+    };
 
     const toggleForm = () => {
         setShowForm(!showForm);
@@ -50,7 +59,7 @@ function App() {
         <div className="App">
             <h1>Today</h1>
             <TaskCounter count={tasks.length} />
-            <TaskList tasks={tasks} editTask={editTask}/>
+            <TaskList tasks={tasks} editTask={editTask} deleteTask={completeTask} />
             {!showForm && (
                 <button className='btn btn-open-form' onClick={toggleForm}>
                     <span className="icon-add" aria-hidden="true">

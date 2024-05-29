@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import './taskItem.css';
 
-const TaskItem = ({ task, removeTask, editTask }) => {
+const TaskItem = ({ task, deleteTask , editTask }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newName, setNewName] = useState(task.name);
   const [newDescription, setNewDescription] = useState(task.description);
 
-  // const handleCheckboxChange = () => {
-  //   removeTask(task.id);
-  // };
+  const handleCheckboxChange = () => {
+    deleteTask (task.id);
+  };
 
   const handleEditClick = () => {
     setIsEditing(true);
@@ -40,7 +40,7 @@ const TaskItem = ({ task, removeTask, editTask }) => {
         <>
           <input
             type="checkbox"
-            // onChange={handleCheckboxChange}
+            onChange={handleCheckboxChange}
             id={`checkbox-${task.id}`}
             className="hidden-checkbox"
           />
