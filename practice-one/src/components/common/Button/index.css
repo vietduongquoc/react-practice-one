@@ -84,3 +84,7 @@
     margin-left: 20px;
     justify-content: center;
 }
+
+.btn-save:hover {
+    background-color: var(--color-danger);
+  }

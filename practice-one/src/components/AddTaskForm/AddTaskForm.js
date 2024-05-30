@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './addTaskForm.css'
+import Button from '../common/Button';
+import Input from '../common/Input';
 
 function AddTaskForm({ addTask, toggleForm }) {
   const [taskName, setTaskName] = useState('');
@@ -25,14 +27,14 @@ function AddTaskForm({ addTask, toggleForm }) {
   return (
     <form className='task-form' onSubmit={handleSubmit}>
       <div className='wrap-content'>
-        <input
+        <Input
           className='title-content'
           type="text"
           value={taskName}
           onChange={(e) => setTaskName(e.target.value)}
           placeholder="Task name"
         />
-        <input
+        <Input
           className='description-content'
           type="text"
           value={taskDescription}
@@ -41,14 +43,14 @@ function AddTaskForm({ addTask, toggleForm }) {
         />
       </div>
       <div className='wrap-btn'>
-        <button className='btn btn-cancel' type="button" onClick={handleCancel}>Cancel</button>
-        <button
+        <Button className='btn btn-cancel' type="button" onClick={handleCancel}>Cancel</Button>
+        <Button
           className={`btn btn-add ${!isFormValid() ? 'btn-add-disabled' : 'btn-enabled'}`}
           type="submit"
           disabled={!isFormValid()}
         >
           Add
-        </button>
+        </Button>
       </div>
     </form>
   );
