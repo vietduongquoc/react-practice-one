@@ -56,7 +56,7 @@ const TaskItem = ({ task, deleteTask , editTask }) => {
           </div>
           <div className='wrap-btn'>
             <button onClick={handleCancelClick} className='btn  btn-cancel'>Cancel</button>
-            <button onClick={handleSaveClick} className='btn  btn-add'>Save</button>
+            <button onClick={handleSaveClick} className='btn  btn-save'>Save</button>
           </div>
         </div>
       ) : (
