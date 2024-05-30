@@ -4,6 +4,7 @@ import TaskCounter from './components/TaskCounter/TaskCounter';
 import TaskList from './components/TaskList/TaskList';
 import { fetchTasks, createTask, updateTask, deleteTask } from './services/TaskService';
 import './components/index.css';
+import Button from './components/common/Button';
 
 function App() {
     const [tasks, setTasks] = useState([]);
@@ -61,7 +62,7 @@ function App() {
             <TaskCounter count={tasks.length} />
             <TaskList tasks={tasks} editTask={editTask} deleteTask={completeTask} />
             {!showForm && (
-                <button className='btn btn-open-form' onClick={toggleForm}>
+                <Button className='btn btn-open-form' onClick={toggleForm}>
                     <span className="icon-add" aria-hidden="true">
                         <svg width="13" height="13">
                             <path fill="currentColor" fillRule="evenodd"
@@ -69,7 +70,7 @@ function App() {
                         </svg>
                     </span>
                     Add task
-                </button>
+                </Button>
             )}
             {showForm && <AddTaskForm addTask={addTask} toggleForm={toggleForm} />}
         </div>

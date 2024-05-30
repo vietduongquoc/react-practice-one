@@ -1,16 +1,28 @@
-// src/components/common/input/index.js
 import React from 'react';
 import './index.css';
 
 const Input = ({
-  type,
-  placeholder,
-  className,
+  type = 'text',
+  placeholder = '',
+  className = '',
   value,
   onChange,
-  onBlur,
-  onFocus,
+  id,
+  ...props
 }) => {
+  if (type === 'checkbox') {
+    return (
+      <input
+        type={type}
+        className={`input ${className}`}
+        checked={value}
+        onChange={onChange}
+        id={id}
+        {...props}
+      />
+    );
+  }
+
   return (
     <input
       type={type}
@@ -18,8 +30,7 @@ const Input = ({
       className={`input ${className}`}
       value={value}
       onChange={onChange}
-      onBlur={onBlur}
-      onFocus={onFocus}
+      {...props}
     />
   );
 };
