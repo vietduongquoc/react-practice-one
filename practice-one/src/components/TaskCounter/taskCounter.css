@@ -1,7 +1,9 @@
 .task-counter {
    display: flex;
-   max-width: 75px;
+   max-width: 60px;
    justify-content: space-between;
    color: var(--color-primary);
    font-weight: var(--font-weight-regular);
+   font-size: var(--font-size-sm);
+   align-items: center;
 }

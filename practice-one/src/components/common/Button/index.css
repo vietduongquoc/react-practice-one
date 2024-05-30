@@ -7,8 +7,8 @@
 .btn-open-form {
     background-color: var(--color-white);
     border: none;
-    padding: none;
     padding: 0;
+    align-items: center;
 }
 
 .btn-open-form:hover {
@@ -22,10 +22,10 @@
 
 .btn-add-disabled {
     background-color: var(--color-disnable);
+    cursor: not-allowed;
 }
 
 .btn-add {
-    background-color: var(--color-secondary);
     color: var(--color-white);
     font-size: 14px;
     padding: 10px 12px;
@@ -35,7 +35,11 @@
     justify-content: center;
 }
 
-.btn-add:hover {
+.btn-enabled {
+    background-color: var(--color-secondary);
+}
+
+.btn-enabled:hover {
     background-color: var(--color-danger);
 }
 
@@ -70,20 +74,13 @@
     transition-delay: 0.12s;
 }
 
-.btn-remove-task {
-    display: none;
-    background-color: red;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 3px;
-}
-
-.task-item .btn-remove-task {
-    display: block;
-}
-
-.task-item .btn-remove-task:hover {
-    background-color: darkred;
+.btn-save {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 5px;
+    width: 90px;
+    margin-left: 20px;
+    justify-content: center;
 }

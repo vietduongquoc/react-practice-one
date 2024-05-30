@@ -18,6 +18,10 @@ function AddTaskForm({ addTask, toggleForm }) {
     toggleForm();
   };
 
+  const isFormValid = () => {
+    return taskName.trim() !== '';
+  };
+
   return (
     <form className='task-form' onSubmit={handleSubmit}>
       <div className='wrap-content'>
@@ -38,7 +42,13 @@ function AddTaskForm({ addTask, toggleForm }) {
       </div>
       <div className='wrap-btn'>
         <button className='btn btn-cancel' type="button" onClick={handleCancel}>Cancel</button>
-        <button className='btn btn-add' type="submit">Add</button>
+        <button
+          className={`btn btn-add ${!isFormValid() ? 'btn-add-disabled' : 'btn-enabled'}`}
+          type="submit"
+          disabled={!isFormValid()}
+        >
+          Add
+        </button>
       </div>
     </form>
   );
