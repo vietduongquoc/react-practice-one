@@ -1,12 +1,12 @@
 import React from 'react';
-import TaskItem from '../TaskItem/TaskItem';
+import TaskItemLogic from '../TaskItem/TaskItemLogic'; // Import TaskItemLogic
 import './taskList.css'; 
 
-function TaskList({ tasks, editTask, deleteTask}) {
+function TaskList({ tasks, editTask, deleteTask }) {
   return (
     <div className="task-list">
       {tasks.map(task => (
-        <TaskItem
+        <TaskItemLogic
           key={task.id}
           task={task}
           editTask={editTask}
