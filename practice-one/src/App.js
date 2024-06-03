@@ -44,7 +44,7 @@ function App() {
     };
 
     const completeTask = async (id) => {
-        const { data, error } = await deleteTask(id);
+        const { error } = await deleteTask(id);
         if (error) {
             console.error('Error deleting task:', error);
         } else {
@@ -56,9 +56,15 @@ function App() {
         setShowForm(!showForm);
     };
 
+    function Title() {
+        return (
+            <h1>Today</h1>
+        )
+    }
+    
     return (
         <div className="App">
-            <h1>Today</h1>
+            <Title />
             <TaskCounterLogic count={tasks.length} />
             <TaskList tasks={tasks} editTask={editTask} deleteTask={completeTask} />
             {!showForm && (
