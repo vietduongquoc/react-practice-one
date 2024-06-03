@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import AddTaskForm from './components/AddTaskForm/AddTaskForm';
-import TaskCounter from './components/TaskCounter/TaskCounter';
-import TaskList from './components/TaskList/TaskList';
 import { fetchTasks, createTask, updateTask, deleteTask } from './services/TaskService';
-import './components/index.css';
+import TaskCounterLogic from './components/TaskCounter/TaskCounterLogic';
+import AddTaskFormLogic from './components/AddTaskForm/AddTaskFormLogic';
+import TaskList from './components/TaskList/TaskList';
 import Button from './components/common/Button';
+import './components/index.css';
 
 function App() {
     const [tasks, setTasks] = useState([]);
@@ -12,11 +12,11 @@ function App() {
 
     useEffect(() => {
         const loadTasks = async () => {
-            try {
-                const tasks = await fetchTasks();
-                setTasks(tasks);
-            } catch (error) {
+            const { data, error } = await fetchTasks();
+            if (error) {
                 console.error('Error loading tasks:', error);
+            } else {
+                setTasks(data);
             }
         };
 
@@ -24,31 +24,31 @@ function App() {
     }, []);
 
     const addTask = async (name, description) => {
-        try {
-            const newTask = await createTask({ name, description });
-            setTasks([...tasks, newTask]);
-            setShowForm(false);
-        } catch (error) {
+        const { data, error } = await createTask({ name, description });
+        if (error) {
             console.error('Error adding task:', error);
+        } else {
+            setTasks([...tasks, data]);
+            setShowForm(false);
         }
     };
 
     const editTask = async (id, name, description) => {
-        try {
-            const updatedTask = await updateTask(id, { name, description });
-            setTasks(tasks.map(task => (task.id === id ? updatedTask : task)));
-            setShowForm(false);
-        } catch (error) {
+        const { data, error } = await updateTask(id, { name, description });
+        if (error) {
             console.error('Error editing task:', error);
+        } else {
+            setTasks(tasks.map(task => (task.id === id ? data : task)));
+            setShowForm(false);
         }
     };
 
     const completeTask = async (id) => {
-        try {
-            await deleteTask(id);
-            setTasks(tasks.filter(task => task.id !== id));
-        } catch (error) {
+        const { error } = await deleteTask(id);
+        if (error) {
             console.error('Error deleting task:', error);
+        } else {
+            setTasks(tasks.filter(task => task.id !== id));
         }
     };
 
@@ -56,10 +56,16 @@ function App() {
         setShowForm(!showForm);
     };
 
+    function Title() {
+        return (
+            <h1>Today</h1>
+        )
+    }
+    
     return (
         <div className="App">
-            <h1>Today</h1>
-            <TaskCounter count={tasks.length} />
+            <Title />
+            <TaskCounterLogic count={tasks.length} />
             <TaskList tasks={tasks} editTask={editTask} deleteTask={completeTask} />
             {!showForm && (
                 <Button className='btn btn-open-form' onClick={toggleForm}>
@@ -72,7 +78,7 @@ function App() {
                     Add task
                 </Button>
             )}
-            {showForm && <AddTaskForm addTask={addTask} toggleForm={toggleForm} />}
+            {showForm && <AddTaskFormLogic addTask={addTask} toggleForm={toggleForm} />}
         </div>
     );
 }
