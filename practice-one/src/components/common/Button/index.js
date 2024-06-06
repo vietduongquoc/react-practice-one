@@ -1,14 +1,14 @@
 import React from 'react';
 import './index.css';
 
-const Button = ({
-  type = 'button',
-  className = '',
-  onClick,
-  isDisabled = false,
-  label = '',
-  icon = null,
-}) => {
+const Button = (props) => {
+  const { 
+    type = 'button',
+    className = '',
+    onClick,
+    isDisabled = false,
+    label = '',
+    icon = null } = props
   return (
     <button
       type={type}
