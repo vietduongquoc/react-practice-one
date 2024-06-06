@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { fetchTasks, createTask, updateTask, deleteTask } from './services/TaskService';
-import TaskCounterLogic from './components/TaskCounter/TaskCounterLogic';
-import AddTaskFormLogic from './components/AddTaskForm/AddTaskFormLogic';
+import TaskCounterLogic from './components/TaskCounter/TaskCounter';
+import AddTaskFormLogic from './components/AddTaskForm/AddTaskForm';
 import TaskList from './components/TaskList/TaskList';
 import Button from './components/common/Button';
 import './components/index.css';
+import AddIcon from './components/common/Icon/AddIcom';
 
 function App() {
     const [tasks, setTasks] = useState([]);
@@ -61,7 +62,7 @@ function App() {
             <h1>Today</h1>
         )
     }
-    
+
     return (
         <div className="App">
             <Title />
@@ -69,13 +70,8 @@ function App() {
             <TaskList tasks={tasks} editTask={editTask} deleteTask={completeTask} />
             {!showForm && (
                 <Button className='btn btn-open-form' onClick={toggleForm}>
-                    <span className="icon-add" aria-hidden="true">
-                        <svg width="13" height="13">
-                            <path fill="currentColor" fillRule="evenodd"
-                                d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z"></path>
-                        </svg>
-                    </span>
-                    Add task
+                    <AddIcon />
+                     Add task
                 </Button>
             )}
             {showForm && <AddTaskFormLogic addTask={addTask} toggleForm={toggleForm} />}

@@ -1,10 +1,10 @@
 import React from 'react';
-import TaskItemLogic from '../TaskItem/TaskItemLogic'; // Import TaskItemLogic
+import TaskItemLogic from '../TaskItem/TaskItem'; // Import TaskItemLogic
 import './taskList.css'; 
 
 function TaskList({ tasks, editTask, deleteTask }) {
   return (
-    <div className="task-list">
+    <li className="task-list">
       {tasks.map(task => (
         <TaskItemLogic
           key={task.id}
@@ -13,7 +13,7 @@ function TaskList({ tasks, editTask, deleteTask }) {
           deleteTask={deleteTask}
         />
       ))}
-    </div>
+    </li>
   );
 }
 
