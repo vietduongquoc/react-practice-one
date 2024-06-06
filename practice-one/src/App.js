@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
 import { fetchTasks, createTask, updateTask, deleteTask } from './services/TaskService';
-import TaskCounterLogic from './components/TaskCounter/TaskCounter';
-import AddTaskFormLogic from './components/AddTaskForm/AddTaskForm';
+import React, { useState, useEffect } from 'react';
+import TaskCounter from './components/TaskCounter/TaskCounter';
+import AddTaskForm from './components/AddTaskForm/AddTaskForm'
+import AddIcon from './components/common/Icon/AddIcon';
 import TaskList from './components/TaskList/TaskList';
 import Button from './components/common/Button';
 import './components/index.css';
-import AddIcon from './components/common/Icon/AddIcom';
+
 
 function App() {
     const [tasks, setTasks] = useState([]);
@@ -66,7 +67,7 @@ function App() {
     return (
         <div className="App">
             <Title />
-            <TaskCounterLogic count={tasks.length} />
+            <TaskCounter count={tasks.length} />
             <TaskList tasks={tasks} editTask={editTask} deleteTask={completeTask} />
             {!showForm && (
                 <Button className='btn btn-open-form' onClick={toggleForm}>
@@ -74,7 +75,7 @@ function App() {
                      Add task
                 </Button>
             )}
-            {showForm && <AddTaskFormLogic addTask={addTask} toggleForm={toggleForm} />}
+            {showForm && <AddTaskForm addTask={addTask} toggleForm={toggleForm} />}
         </div>
     );
 }

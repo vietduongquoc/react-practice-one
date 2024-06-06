@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './addTaskForm.css';
 import Button from '../common/Button';
 import Input from '../common/Input';
+import './addTaskForm.css';
 
 function AddTaskForm({ addTask, toggleForm }) {
   const [taskName, setTaskName] = useState('');
