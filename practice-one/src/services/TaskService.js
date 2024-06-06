@@ -5,6 +5,10 @@ const api = axios.create({
     baseURL: config.apiBaseUrl,
 });
 
+// export const fetchTasks = async () => {
+//     return Promise.reject(new Error('Failed to fetch tasks.'));
+// };
+
 export const fetchTasks = async () => {
     try {
         const response = await api.get('/tasks');

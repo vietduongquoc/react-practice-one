@@ -6,7 +6,8 @@ const Button = ({
   className = '',
   onClick,
   isDisabled = false,
-  children,
+  label = '',
+  icon = null,
 }) => {
   return (
     <button
@@ -15,7 +16,8 @@ const Button = ({
       onClick={onClick}
       disabled={isDisabled}
     >
-      {children}
+      {icon && <span className="icon">{icon}</span>}
+      {label}
     </button>
   );
 };

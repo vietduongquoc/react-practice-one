@@ -58,8 +58,8 @@ const TaskItem = ({ task, deleteTask, editTask }) => {
               <textarea className='description-content' value={newDescription} onChange={handleDescriptionChange} />
             </div>
             <div className='wrap-btn'>
-              <Button onClick={handleCancelClick} className='btn btn-cancel'>Cancel</Button>
-              <Button onClick={handleSaveClick} className='btn btn-save'>Save</Button>
+              <Button onClick={handleCancelClick} className='btn btn-cancel' label="Cancel" />
+              <Button onClick={handleSaveClick} className='btn btn-save' label="Save" />
             </div>
           </div>
         ) : (
@@ -71,9 +71,7 @@ const TaskItem = ({ task, deleteTask, editTask }) => {
         )}
       </div>
       {!isEditing && (
-        <Button className='btn-edit-task' onClick={handleEditClick}>
-          <EditIcon />
-        </Button>
+        <Button className='btn-edit-task' onClick={handleEditClick} icon={<EditIcon />} />
       )}
     </div>
   );

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import Button from '../common/Button';
 import Input from '../common/Input';
 import './addTaskForm.css';
 
-function AddTaskForm({ addTask, toggleForm }) {
+const AddTaskForm = ({ addTask, toggleForm }) => {
   const [taskName, setTaskName] = useState('');
   const [taskDescription, setTaskDescription] = useState('');
   const [error, setError] = useState(null);
@@ -39,6 +39,8 @@ function AddTaskForm({ addTask, toggleForm }) {
     return taskName.trim() !== '';
   };
 
+  const buttonStatus = isFormValid() ? 'btn-enabled' : 'btn-add-disabled';
+
   return (
     <form className='task-form' onSubmit={handleSubmit}>
       <div className='wrap-content'>
@@ -58,18 +60,22 @@ function AddTaskForm({ addTask, toggleForm }) {
         />
       </div>
       <div className='wrap-btn'>
-        <Button className='btn btn-cancel' type="button" onClick={handleCancel}>Cancel</Button>
         <Button
-          className={`btn btn-add ${!isFormValid() ? 'btn-add-disabled' : 'btn-enabled'}`}
+          className='btn btn-cancel'
+          type="button"
+          onClick={handleCancel}
+          label="Cancel"
+        />
+        <Button
+          className={`btn btn-add ${buttonStatus}`}
           type="submit"
           disabled={!isFormValid()}
-        >
-          Add
-        </Button>
+          label="Add"
+        />
       </div>
       {error && <div className='error-message'>{error}</div>}
     </form>
   );
 }
 
-export default AddTaskForm;
+export default memo(AddTaskForm);
