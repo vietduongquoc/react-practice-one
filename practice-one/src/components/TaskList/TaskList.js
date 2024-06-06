@@ -1,12 +1,12 @@
-import React from 'react';
-import TaskItemLogic from '../TaskItem/TaskItem'; // Import TaskItemLogic
-import './taskList.css'; 
+import TaskItem from '../TaskItem/TaskItem';
+import React, { memo } from 'react';
+import './taskList.css';
 
-function TaskList({ tasks, editTask, deleteTask }) {
+const TaskList = ({ tasks, editTask, deleteTask }) => {
   return (
     <li className="task-list">
       {tasks.map(task => (
-        <TaskItemLogic
+        <TaskItem
           key={task.id}
           task={task}
           editTask={editTask}
@@ -17,4 +17,4 @@ function TaskList({ tasks, editTask, deleteTask }) {
   );
 }
 
-export default TaskList;
+export default memo(TaskList);

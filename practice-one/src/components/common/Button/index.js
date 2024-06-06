@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { memo } from 'react';
 import './index.css';
 
-const Button = ({
-  type = 'button',
-  className = '',
-  onClick,
-  isDisabled = false,
-  children,
-}) => {
+const Button = (props) => {
+  const { 
+    type = 'button',
+    className = '',
+    onClick,
+    isDisabled = false,
+    label = '',
+    icon = null } = props
   return (
     <button
       type={type}
@@ -15,9 +16,10 @@ const Button = ({
       onClick={onClick}
       disabled={isDisabled}
     >
-      {children}
+      {icon && <span className="icon">{icon}</span>}
+      {label}
     </button>
   );
 };
 
-export default Button;
+export default memo(Button);

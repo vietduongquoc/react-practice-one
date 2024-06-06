@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import './taskCounter.css';
 import TaskCounterIcon from '../common/Icon/TaskCounterIcon';
 
-function TaskCounter({ count }) {
+const TaskCounter = ({ count }) => {
   return (
     <div className="task-counter">
       <TaskCounterIcon />
@@ -11,4 +11,4 @@ function TaskCounter({ count }) {
   );
 }
 
-export default TaskCounter;
+export default memo(TaskCounter);

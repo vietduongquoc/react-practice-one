@@ -1,23 +1,27 @@
-import React, { useState, useEffect } from 'react';
 import { fetchTasks, createTask, updateTask, deleteTask } from './services/TaskService';
-import TaskCounterLogic from './components/TaskCounter/TaskCounter';
-import AddTaskFormLogic from './components/AddTaskForm/AddTaskForm';
+import React, { useState, useEffect } from 'react';
+import TaskCounter from './components/TaskCounter/TaskCounter';
+import AddTaskForm from './components/AddTaskForm/AddTaskForm'
+import ErrorComponent from './components/Error/ErrorComponent';
+import AddIcon from './components/common/Icon/AddIcon';
 import TaskList from './components/TaskList/TaskList';
 import Button from './components/common/Button';
+import Title from './components/Title';
 import './components/index.css';
-import AddIcon from './components/common/Icon/AddIcom';
 
 function App() {
     const [tasks, setTasks] = useState([]);
     const [showForm, setShowForm] = useState(false);
+    const [error, setError] = useState(null); // Add state for error handling
 
     useEffect(() => {
         const loadTasks = async () => {
-            const { data, error } = await fetchTasks();
-            if (error) {
-                console.error('Error loading tasks:', error);
-            } else {
+            try {
+                const { data } = await fetchTasks();
                 setTasks(data);
+            } catch (error) {
+                console.error('Error loading tasks:', error);
+                setError(error); // If there is an error, update status error
             }
         };
 
@@ -57,24 +61,19 @@ function App() {
         setShowForm(!showForm);
     };
 
-    function Title() {
-        return (
-            <h1>Today</h1>
-        )
-    }
-
     return (
         <div className="App">
             <Title />
-            <TaskCounterLogic count={tasks.length} />
+            {error && <ErrorComponent />} {/* Display ErrorComponent when there is an error */}
+            <TaskCounter count={tasks.length} />
             <TaskList tasks={tasks} editTask={editTask} deleteTask={completeTask} />
             {!showForm && (
-                <Button className='btn btn-open-form' onClick={toggleForm}>
-                    <AddIcon />
-                     Add task
-                </Button>
+                <Button className='btn btn-open-form' onClick={toggleForm}
+                    icon={<AddIcon />}
+                    label="Add task"
+                />
             )}
-            {showForm && <AddTaskFormLogic addTask={addTask} toggleForm={toggleForm} />}
+            {showForm && <AddTaskForm addTask={addTask} toggleForm={toggleForm} />}
         </div>
     );
 }

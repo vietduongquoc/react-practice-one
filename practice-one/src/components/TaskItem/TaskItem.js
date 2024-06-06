@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import './taskItem.css';
 import Button from '../common/Button';
 import Input from '../common/Input';
@@ -58,8 +58,8 @@ const TaskItem = ({ task, deleteTask, editTask }) => {
               <textarea className='description-content' value={newDescription} onChange={handleDescriptionChange} />
             </div>
             <div className='wrap-btn'>
-              <Button onClick={handleCancelClick} className='btn btn-cancel'>Cancel</Button>
-              <Button onClick={handleSaveClick} className='btn btn-save'>Save</Button>
+              <Button onClick={handleCancelClick} className='btn btn-cancel' label="Cancel" />
+              <Button onClick={handleSaveClick} className='btn btn-save' label="Save" />
             </div>
           </div>
         ) : (
@@ -71,12 +71,10 @@ const TaskItem = ({ task, deleteTask, editTask }) => {
         )}
       </div>
       {!isEditing && (
-        <Button className='btn-edit-task' onClick={handleEditClick}>
-          <EditIcon />
-        </Button>
+        <Button className='btn-edit-task' onClick={handleEditClick} icon={<EditIcon />} />
       )}
     </div>
   );
 };
 
-export default TaskItem;
+export default memo(TaskItem);
