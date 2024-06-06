@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchTasks, createTask, updateTask, deleteTask } from './services/TaskService';
-import TaskCounterLogic from './components/TaskCounter/TaskCounterLogic';
-import AddTaskFormLogic from './components/AddTaskForm/AddTaskFormLogic';
+import TaskCounterLogic from './components/TaskCounter/TaskCounter';
+import AddTaskFormLogic from './components/AddTaskForm/AddTaskForm';
 import TaskList from './components/TaskList/TaskList';
 import Button from './components/common/Button';
 import './components/index.css';
