@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import './taskItem.css';
 import Button from '../common/Button';
 import Input from '../common/Input';
@@ -77,4 +77,4 @@ const TaskItem = ({ task, deleteTask, editTask }) => {
   );
 };
 
-export default TaskItem;
+export default memo(TaskItem);

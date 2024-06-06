@@ -35,11 +35,9 @@ const AddTaskForm = ({ addTask, toggleForm }) => {
     setTaskDescription(e.target.value);
   };
 
-  const isFormValid = () => {
-    return taskName.trim() !== '';
-  };
+  const isFormValid = taskName.trim() !== ''
 
-  const buttonStatus = isFormValid() ? 'btn-enabled' : 'btn-add-disabled';
+  const buttonStatus = isFormValid ? 'btn-enabled' : 'btn-add-disabled';
 
   return (
     <form className='task-form' onSubmit={handleSubmit}>
@@ -69,7 +67,7 @@ const AddTaskForm = ({ addTask, toggleForm }) => {
         <Button
           className={`btn btn-add ${buttonStatus}`}
           type="submit"
-          disabled={!isFormValid()}
+          disabled={!isFormValid}
           label="Add"
         />
       </div>
