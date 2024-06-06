@@ -1,6 +1,6 @@
 import TaskItem from '../TaskItem/TaskItem'; // Import TaskItemLogic
 import React from 'react';
-import './taskList.css'; 
+import './taskList.css';
 
 function TaskList({ tasks, editTask, deleteTask }) {
   return (
