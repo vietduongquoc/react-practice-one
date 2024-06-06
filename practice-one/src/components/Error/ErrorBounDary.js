@@ -1,29 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useErrorBoundary } from 'react-use-error-boundary';
 import ErrorComponent from './ErrorComponent';
 
-class ErrorBoundary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hasError: false
-    };
+const ErrorBoundary = ({ children }) => {
+  const [error, resetError] = useErrorBoundary();
+
+  if (error) {
+    return (
+      <div>
+        <ErrorComponent />
+        <button onClick={resetError}>Try again</button>
+      </div>
+    );
   }
 
-  componentDidCatch(error, info) {
-    // Error handling here
-    this.setState({ hasError: true });
-    // Log error information if necessary
-    console.error(error, info);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      // Display ErrorComponent if there is an error
-      return <ErrorComponent />;
-    }
-    // If there are no errors, render children normally
-    return this.props.children;
-  }
-}
+  return <>{children}</>;
+};
 
 export default ErrorBoundary;
